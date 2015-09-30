@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Appztbles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @appztbles.each do |appztble| %>
+      <tr>
+        <td><%= appztble.name %></td>
+        <td><%= link_to 'Show', appztble %></td>
+        <td><%= link_to 'Edit', edit_appztble_path(appztble) %></td>
+        <td><%= link_to 'Destroy', appztble, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Appztble', new_appztble_path %>
